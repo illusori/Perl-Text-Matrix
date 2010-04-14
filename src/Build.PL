@@ -77,6 +77,7 @@ my $builder = $class->new(
     },
     build_requires => {
         'Test::More'       => 0,
+        'Test::Exception'  => 0,
     },
     requires => {
         'List::Util'       => 0,
