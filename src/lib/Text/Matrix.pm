@@ -370,7 +370,7 @@ __END__
 
 =head1 NAME
 
-Text::Matrix - Text-based matrix of simple yes/no style values.
+Text::Matrix - Text table layout for matrices of short regular data.
 
 =head1 SYNOPSIS
 
@@ -706,7 +706,7 @@ you wished.
 Setting I<$spacer> to C<undef> will return to the default value
 of C<' '>.
 
-=item B<< $matrix->mapper( >> I<$subref> <)>
+=item B<< $matrix->mapper( >> I<$subref> B<)>
 
 Sets a subroutine reference to run over each data value, substituting
 the returned value for the purposes of layout and output.
@@ -770,9 +770,6 @@ L<http://cpanratings.perl.org/d/Text-Matrix>
 L<http://search.cpan.org/dist/Text-Matrix/>
 
 =back
-
-
-=head1 ACKNOWLEDGEMENTS
 
 
 =head1 COPYRIGHT & LICENSE
