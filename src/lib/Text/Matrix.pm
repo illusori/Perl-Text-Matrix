@@ -7,7 +7,7 @@ use List::Util ();
 use List::MoreUtils ();
 use Storable ();
 
-our $VERSION = '0.99_01';
+our $VERSION = '0.99_02';
 
 sub new
 {
@@ -248,7 +248,7 @@ sub _mapped_data
 
     foreach my $row ( @{$data} )
     {
-        $row = [ map { $mapper->( $_ ) } @{$row} ];
+        $row = [ map { scalar( $mapper->( $_ ) ) } @{$row} ];
     }
 
     $self->{ _mapped_data } = $data;
@@ -481,7 +481,7 @@ Text::Matrix - Text table layout for matrices of short regular data.
                 [ qw/A1 B1/ ],
                 [ qw/A2 B2/ ],
             ],
-        mapper  => sub { reverse( $_[ 0 ] ) },
+        mapper  => sub { reverse( $_ ) },
         );
     print "Output:\n", $matrix->matrix();
 
@@ -711,6 +711,8 @@ of C<' '>.
 Sets a subroutine reference to run over each data value, substituting
 the returned value for the purposes of layout and output.
 
+The data value is accessible as both C<$_> and C<$_[ 0 ]>.
+
 This is a convenience function in case you're sourcing your data
 from L<DBI> or something external and don't want to mess with running a
 C<map> across a multi-dimensional data-structure:
@@ -723,7 +725,7 @@ C<map> across a multi-dimensional data-structure:
                 [ qw/A1 B1/ ],
                 [ qw/A2 B2/ ],
             ],
-        mapper  => sub { reverse( $_[ 0 ] ) },
+        mapper  => sub { reverse( $_ ) },
         );
 
 =back
