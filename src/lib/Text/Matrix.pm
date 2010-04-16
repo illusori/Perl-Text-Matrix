@@ -501,7 +501,7 @@ matrices of single-character (such as Y/N for yes/no) or short
 multi-character data against row and column labels that are sufficiently
 longer that conventional table layouts distort the layout of the data.
 
-The core aim is to base the layout of the tabular data concisely and
+The core aim is to base the layout on the tabular data concisely and
 formated regularly to reflect the terseness of the underlying data,
 without being forced to compensate for the longer length of the
 labels for the columns and rows.
