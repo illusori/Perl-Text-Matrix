@@ -7,7 +7,7 @@ use List::Util ();
 use List::MoreUtils ();
 use Storable ();
 
-our $VERSION = '0.99_02';
+our $VERSION = '1.00';
 
 sub new
 {
